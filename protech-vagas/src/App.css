@@ -1,15 +1,27 @@
-#root {
-  width: 100%;
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.app__section h1 {
   margin: 0;
-  padding: 0;
+  color: var(--color-primary);
 }
 
-.logo,
-.logo.react,
-.read-the-docs {
-  display: none;
+.app__section p {
+  margin: 0.5rem 0 0;
+  color: var(--color-gray-700);
 }
 
-.card {
-  padding: 0;
+.app__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.app__row--stack {
+  max-width: 420px;
 }

@@ -1,0 +1,193 @@
+:root {
+  --btn-radius: 0.5rem;
+  --btn-font-size: 0.875rem;
+  --btn-font-weight: 500;
+  --btn-transition: 180ms ease;
+  --btn-focus-ring: 0 0 0 2px color-mix(in srgb, var(--color-primary) 35%, transparent);
+
+  --btn-default-bg: var(--color-primary);
+  --btn-default-fg: var(--color-white);
+  --btn-default-border: var(--color-primary);
+  --btn-default-hover-bg: color-mix(in srgb, var(--color-primary) 90%, var(--color-black));
+  --btn-default-hover-fg: var(--color-white);
+  --btn-default-hover-border: color-mix(in srgb, var(--color-primary) 90%, var(--color-black));
+
+  --btn-secondary-bg: var(--color-secondary);
+  --btn-secondary-fg: var(--color-white);
+  --btn-secondary-border: var(--color-secondary);
+  --btn-secondary-hover-bg: color-mix(in srgb, var(--color-secondary) 90%, var(--color-black));
+  --btn-secondary-hover-fg: var(--color-white);
+  --btn-secondary-hover-border: color-mix(in srgb, var(--color-secondary) 90%, var(--color-black));
+
+  --btn-destructive-bg: #dc2626;
+  --btn-destructive-fg: var(--color-white);
+  --btn-destructive-border: #dc2626;
+  --btn-destructive-hover-bg: #b91c1c;
+  --btn-destructive-hover-fg: var(--color-white);
+  --btn-destructive-hover-border: #b91c1c;
+
+  --btn-outline-bg: transparent;
+  --btn-outline-fg: var(--color-text);
+  --btn-outline-border: var(--color-border);
+  --btn-outline-hover-bg: var(--color-gray-100);
+  --btn-outline-hover-fg: var(--color-text);
+  --btn-outline-hover-border: var(--color-gray-300);
+
+  --btn-ghost-bg: transparent;
+  --btn-ghost-fg: var(--color-text);
+  --btn-ghost-border: transparent;
+  --btn-ghost-hover-bg: var(--color-gray-100);
+  --btn-ghost-hover-fg: var(--color-text);
+  --btn-ghost-hover-border: transparent;
+
+  --btn-link-bg: transparent;
+  --btn-link-fg: var(--color-primary);
+  --btn-link-border: transparent;
+  --btn-link-hover-bg: transparent;
+  --btn-link-hover-fg: color-mix(in srgb, var(--color-primary) 88%, var(--color-black));
+  --btn-link-hover-border: transparent;
+}
+
+.btn {
+  --btn-bg: var(--btn-default-bg);
+  --btn-fg: var(--btn-default-fg);
+  --btn-border: var(--btn-default-border);
+  --btn-hover-bg: var(--btn-default-hover-bg);
+  --btn-hover-fg: var(--btn-default-hover-fg);
+  --btn-hover-border: var(--btn-default-hover-border);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--btn-border);
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--btn-transition),
+    color var(--btn-transition),
+    border-color var(--btn-transition),
+    box-shadow var(--btn-transition),
+    transform var(--btn-transition);
+}
+
+.btn:hover:not(:disabled) {
+  background-color: var(--btn-hover-bg);
+  color: var(--btn-hover-fg);
+  border-color: var(--btn-hover-border);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--btn-focus-ring);
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn--default {
+  --btn-bg: var(--btn-default-bg);
+  --btn-fg: var(--btn-default-fg);
+  --btn-border: var(--btn-default-border);
+  --btn-hover-bg: var(--btn-default-hover-bg);
+  --btn-hover-fg: var(--btn-default-hover-fg);
+  --btn-hover-border: var(--btn-default-hover-border);
+}
+
+.btn--secondary {
+  --btn-bg: var(--btn-secondary-bg);
+  --btn-fg: var(--btn-secondary-fg);
+  --btn-border: var(--btn-secondary-border);
+  --btn-hover-bg: var(--btn-secondary-hover-bg);
+  --btn-hover-fg: var(--btn-secondary-hover-fg);
+  --btn-hover-border: var(--btn-secondary-hover-border);
+}
+
+.btn--destructive {
+  --btn-bg: var(--btn-destructive-bg);
+  --btn-fg: var(--btn-destructive-fg);
+  --btn-border: var(--btn-destructive-border);
+  --btn-hover-bg: var(--btn-destructive-hover-bg);
+  --btn-hover-fg: var(--btn-destructive-hover-fg);
+  --btn-hover-border: var(--btn-destructive-hover-border);
+}
+
+.btn--outline {
+  --btn-bg: var(--btn-outline-bg);
+  --btn-fg: var(--btn-outline-fg);
+  --btn-border: var(--btn-outline-border);
+  --btn-hover-bg: var(--btn-outline-hover-bg);
+  --btn-hover-fg: var(--btn-outline-hover-fg);
+  --btn-hover-border: var(--btn-outline-hover-border);
+}
+
+.btn--ghost {
+  --btn-bg: var(--btn-ghost-bg);
+  --btn-fg: var(--btn-ghost-fg);
+  --btn-border: var(--btn-ghost-border);
+  --btn-hover-bg: var(--btn-ghost-hover-bg);
+  --btn-hover-fg: var(--btn-ghost-hover-fg);
+  --btn-hover-border: var(--btn-ghost-hover-border);
+}
+
+.btn--link {
+  --btn-bg: var(--btn-link-bg);
+  --btn-fg: var(--btn-link-fg);
+  --btn-border: var(--btn-link-border);
+  --btn-hover-bg: var(--btn-link-hover-bg);
+  --btn-hover-fg: var(--btn-link-hover-fg);
+  --btn-hover-border: var(--btn-link-hover-border);
+
+  text-underline-offset: 4px;
+}
+
+.btn--link:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.btn--default,
+.btn--secondary,
+.btn--destructive,
+.btn--outline,
+.btn--ghost {
+  padding: 0.625rem 1rem;
+}
+
+.btn--sm {
+  min-height: 2rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.btn--default {
+  min-height: 2.5rem;
+}
+
+.btn--lg {
+  min-height: 2.75rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9375rem;
+}
+
+.btn--icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.btn--full {
+  width: 100%;
+}
