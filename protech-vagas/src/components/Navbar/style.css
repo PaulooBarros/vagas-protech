@@ -1,10 +1,23 @@
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 40;
   width: 100%;
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-gray-200);
+  background-color: transparent;
+  transition:
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.navbar--overlay {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.navbar--scrolled {
+  background-color: var(--color-primary);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
 }
 
 .navbar__container {
@@ -62,18 +75,18 @@
 }
 
 .navbar__link {
-  color: var(--color-gray-700);
+  color: var(--color-white);
   font-size: 0.95rem;
   font-weight: 600;
   transition: color 180ms ease;
 }
 
 .navbar__link:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .navbar__link--active {
-  color: var(--color-primary);
+  color: var(--color-white);
 }
 
 @media (max-width: 768px) {
@@ -113,10 +126,16 @@
     width: 100%;
     padding: 0.65rem 0.75rem;
     border-radius: 0.5rem;
+    color: var(--color-gray-700);
   }
 
   .navbar__link:hover {
     background-color: var(--color-gray-100);
+    color: var(--color-primary);
+  }
+
+  .navbar__link--active {
+    color: var(--color-primary);
   }
 }
 

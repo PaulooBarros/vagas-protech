@@ -1,16 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import protechLogo from '../../assets/protechlogo.png'
 import './style.css'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    function onScroll() {
+      setIsScrolled(window.scrollY > 20)
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   function closeMenu() {
     setIsOpen(false)
   }
 
   return (
-    <header className="navbar" role="banner">
+    <header
+      className={`navbar ${isScrolled || isOpen ? 'navbar--scrolled' : 'navbar--overlay'}`}
+      role="banner"
+    >
       <div className="navbar__container">
         <a className="navbar__brand" href="/" aria-label="Protech">
           <img src={protechLogo} alt="Logo Protech" className="navbar__logo" />
